@@ -4,6 +4,8 @@ import javax.xml.bind.DatatypeConverter;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class User {
     private int userId;
@@ -107,6 +109,9 @@ public class User {
     }
 
     public void setEmail(String email) {
+        Pattern pattern = Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
+        Matcher mat = pattern.matcher(email);
+        if(email.trim().isEmpty() || !mat.matches()) throw new IllegalArgumentException("invalid email");
         this.email = email;
     }
 
