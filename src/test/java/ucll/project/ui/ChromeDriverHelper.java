@@ -4,7 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 class ChromeDriverHelper {
-    static ChromeDriver getDriver(){
+    static ChromeDriver getDriver() {
         // Setup the Chrome driver for the whole class
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver = new ChromeDriver();

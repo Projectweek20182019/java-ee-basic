@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class UserTest {
 
     @Test
-    public void text_CreateUserTest_sets_all_fields(){
+    public void text_CreateUserTest_sets_all_fields() {
         User user = new User(
                 "userName",
                 "firstName",
@@ -27,8 +27,8 @@ public class UserTest {
         assertEquals(user.getRole(), Role.ADMIN);
     }
 
-    @Test (expected = IllegalArgumentException.class)
-    public void test_CreateUser_with_invalid_email(){
+    @Test(expected = IllegalArgumentException.class)
+    public void test_CreateUser_with_invalid_email() {
         User user = new User(
                 "userName",
                 "firstName",

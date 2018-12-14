@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="components/header.jspf"%>
+<%@ include file="components/header.jspf" %>
 <div class="container">
     <!-- Jumbotron -->
     <div class="jumbotron">
@@ -13,7 +13,8 @@
         <div class="row">
             <div class="col-md-6">
                 <h2>What happened?</h2>
-                <p class="lead">A 404 error status implies that the file or page that you're looking for could not be found.</p>
+                <p class="lead">A 404 error status implies that the file or page that you're looking for could not be
+                    found.</p>
             </div>
             <div class="col-md-6">
                 <h2>What can I do?</h2>
@@ -22,4 +23,4 @@
         </div>
     </div>
 </div>
-<%@ include file="components/footer.jspf"%>
+<%@ include file="components/footer.jspf" %>

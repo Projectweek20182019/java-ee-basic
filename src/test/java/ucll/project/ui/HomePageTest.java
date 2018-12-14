@@ -15,13 +15,13 @@ public class HomePageTest {
     private static WebDriver driver;
 
     @BeforeClass
-    public static void SetupChromeDriver(){
+    public static void SetupChromeDriver() {
         // Setup the Chrome driver for the whole class
         driver = ChromeDriverHelper.getDriver();
     }
 
     @AfterClass
-    public static void CloseChrome(){
+    public static void CloseChrome() {
         // close it in the end, comment this away to keep chrome open
         driver.close();
     }
@@ -31,27 +31,27 @@ public class HomePageTest {
 
         HomePage homePage = new HomePage(driver);
         homePage.navigateTo();
-        assertEquals("Hello world!",homePage.getPageTitle());
+        assertEquals("Hello world!", homePage.getPageTitle());
 
     }
 
     @Test
-    public void visitLoginPageFromHomePageTest(){
+    public void visitLoginPageFromHomePageTest() {
 
         HomePage homePage = new HomePage(driver);
         homePage.navigateTo();
         LoginPage loginPage = homePage.clickLogin();
-        assertEquals("Please sign in",loginPage.getPageTitle());
+        assertEquals("Please sign in", loginPage.getPageTitle());
 
     }
 
     @Test
-    public void visitSignUpPageFromHomePageTest(){
+    public void visitSignUpPageFromHomePageTest() {
 
         HomePage homePage = new HomePage(driver);
         homePage.navigateTo();
         SignUpPage signUpPage = homePage.clickSignUp();
-        assertEquals("Create an account",signUpPage.getPageTitle());
+        assertEquals("Create an account", signUpPage.getPageTitle());
 
     }
 

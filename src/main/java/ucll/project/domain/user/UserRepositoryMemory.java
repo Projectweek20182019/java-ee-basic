@@ -22,7 +22,7 @@ public class UserRepositoryMemory implements UserRepository {
                 throw new IllegalArgumentException("Email already in use");
             }
         }
-        int userId = users.size()+1;
+        int userId = users.size() + 1;
         user.setUserId(userId);
         user.hashAndSetPassword(password);
         users.put(userId, user);

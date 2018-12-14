@@ -9,43 +9,43 @@ public class LoginPage {
 
     private WebDriver driver;
 
-    @FindBy(id="pageTitle")
+    @FindBy(id = "pageTitle")
     private WebElement pageTitle;
 
-    @FindBy(id="errorMessage")
+    @FindBy(id = "errorMessage")
     private WebElement errorMessage;
 
-    @FindBy(id="usernameInput")
+    @FindBy(id = "usernameInput")
     private WebElement usernameInput;
 
-    @FindBy(id="passwordInput")
+    @FindBy(id = "passwordInput")
     private WebElement passwordInput;
 
-    @FindBy(id="submitButton")
+    @FindBy(id = "submitButton")
     private WebElement submitButton;
 
-    public LoginPage(WebDriver driver){
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    public void navigateTo(){
+    public void navigateTo() {
         driver.get("http://localhost:8080/user/login");
     }
 
-    public String getPageTitle(){
+    public String getPageTitle() {
         return pageTitle.getText();
     }
 
-    public String getErrorMessage(){
+    public String getErrorMessage() {
         return errorMessage.getText();
     }
 
-    private void enterUsername(String username){
+    private void enterUsername(String username) {
         usernameInput.sendKeys(username);
     }
 
-    private void enterPassword(String password){
+    private void enterPassword(String password) {
         passwordInput.sendKeys(password);
     }
 
@@ -54,20 +54,19 @@ public class LoginPage {
         return new HomePage(driver);
     }
 
-    public HomePage loginAs(String username,String password){
+    public HomePage loginAs(String username, String password) {
         enterUsername(username);
         enterPassword(password);
         clickLoginButton();
         return new HomePage(driver);
     }
 
-    public LoginPage loginAsExpectingError(String username,String password){
+    public LoginPage loginAsExpectingError(String username, String password) {
         enterUsername(username);
         enterPassword(password);
         clickLoginButton();
         return new LoginPage(driver);
     }
-
 
 
 }

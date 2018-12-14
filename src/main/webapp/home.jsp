@@ -1,12 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!-- header -->
-<%@ include file="components/header.jspf"%>
+<%@ include file="components/header.jspf" %>
 
 <!-- Navigation -->
-<%@ include file="components/navigation.jspf"%>
+<%@ include file="components/navigation.jspf" %>
 
 <!-- Page Content -->
 
@@ -19,4 +19,4 @@
     </div>
 </div>
 
-<%@ include file="components/footer.jspf"%>
+<%@ include file="components/footer.jspf" %>

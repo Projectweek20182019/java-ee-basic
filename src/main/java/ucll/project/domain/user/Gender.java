@@ -5,11 +5,12 @@ public enum Gender {
     FEMALE("Female");
 
     private String gender;
+
     Gender(String gender) {
         this.gender = gender;
     }
 
-    public String getGender(){
+    public String getGender() {
         return this.gender;
     }
 }

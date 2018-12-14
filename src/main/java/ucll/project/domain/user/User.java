@@ -22,7 +22,7 @@ public class User {
     public User() {
     }
 
-    public User(String userName, String firstName, String lastName, String email, Gender gender, Role role){
+    public User(String userName, String firstName, String lastName, String email, Gender gender, Role role) {
         setUserName(userName);
         setFirstName(firstName);
         setLastName(lastName);
@@ -111,7 +111,7 @@ public class User {
     public void setEmail(String email) {
         Pattern pattern = Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
         Matcher mat = pattern.matcher(email);
-        if(email.trim().isEmpty() || !mat.matches()) throw new IllegalArgumentException("invalid email");
+        if (email.trim().isEmpty() || !mat.matches()) throw new IllegalArgumentException("invalid email");
         this.email = email;
     }
 

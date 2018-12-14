@@ -9,6 +9,7 @@ public interface UserRepository {
 
     // READ ONE
     User get(int userId);
+
     // READ ALL
     List<User> getAll();
 

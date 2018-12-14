@@ -1,6 +1,5 @@
 package ucll.project.ui.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,48 +9,48 @@ public class HomePage {
 
     private WebDriver driver;
 
-    @FindBy(id="pageTitle")
+    @FindBy(id = "pageTitle")
     private WebElement pageTitle;
 
-    @FindBy(id="loginLink")
+    @FindBy(id = "loginLink")
     private WebElement loginLink;
 
-    @FindBy(id="signUpLink")
+    @FindBy(id = "signUpLink")
     private WebElement signUpLink;
 
-    @FindBy(id="logoutLink")
+    @FindBy(id = "logoutLink")
     private WebElement logoutLink;
 
-    public HomePage(WebDriver driver){
+    public HomePage(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    public HomePage navigateTo(){
+    public HomePage navigateTo() {
         driver.get("http://localhost:8080/");
         return this;
     }
 
-    public String getPageTitle(){
+    public String getPageTitle() {
         return pageTitle.getText();
     }
 
-    public LoginPage clickLogin(){
+    public LoginPage clickLogin() {
         loginLink.click();
         return new LoginPage(driver);
     }
 
-    public SignUpPage clickSignUp(){
+    public SignUpPage clickSignUp() {
         signUpLink.click();
         return new SignUpPage(driver);
     }
 
-    public HomePage clickLogoutLink(){
+    public HomePage clickLogoutLink() {
         logoutLink.click();
         return new HomePage(driver);
     }
 
-    public String getLogoutLinkText(){
+    public String getLogoutLinkText() {
         return logoutLink.getText();
     }
 
