@@ -51,8 +51,13 @@ public class UserTest {
     @After //executes after each test
     public void deleteUser(){
         /*
-        * TODO delete user
+        * TODO delete user from Database
         */
+        System.out.println("DELETE USER " + user.getUserName());
+        /**
+         * When using a database you should delete the user here from the database again.
+         * Since this test is not using a database, this is not required for the demo project.
+         */
     }
 
     @Test
