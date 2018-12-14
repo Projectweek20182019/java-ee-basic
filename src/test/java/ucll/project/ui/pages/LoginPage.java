@@ -61,6 +61,10 @@ public class LoginPage {
         return new HomePage(driver);
     }
 
+    /**
+     * If logging in with incorrect credentials we get the Login Page,
+     * We do not get redirected to the HomePage as with a successful login.
+     */
     public LoginPage loginAsExpectingError(String username, String password) {
         enterUsername(username);
         enterPassword(password);

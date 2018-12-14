@@ -65,6 +65,10 @@ public class LoginPageTest {
 
         LoginPage loginPage = new LoginPage(driver);
         loginPage.navigateTo();
+        /**
+         * If logging in with incorrect credentials we get the Login Page,
+         * We do not get redirected to the HomePage as with a successful login.
+         */
         loginPage = loginPage.loginAsExpectingError("", "user");
         assertEquals("Please sign in", loginPage.getPageTitle());
 
