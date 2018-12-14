@@ -9,6 +9,7 @@ import ucll.project.ui.pages.HomePage;
 import ucll.project.ui.pages.LoginPage;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class LoginPageTest {
 
@@ -46,6 +47,7 @@ public class LoginPageTest {
         loginPage.navigateTo();
         HomePage homePage = loginPage.loginAs("user", "user");
         assertEquals("Hello world!", homePage.getPageTitle());
+        assertTrue(homePage.getLogoutLinkText().contains("user"));
 
     }
 
