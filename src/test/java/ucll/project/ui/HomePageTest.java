@@ -1,11 +1,9 @@
 package ucll.project.ui;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import ucll.project.ui.pages.HomePage;
 import ucll.project.ui.pages.LoginPage;
 import ucll.project.ui.pages.SignUpPage;
@@ -19,9 +17,7 @@ public class HomePageTest {
     @BeforeClass
     public static void SetupChromeDriver(){
         // Setup the Chrome driver for the whole class
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        driver = ChromeDriverHelper.getDriver();
     }
 
     @AfterClass

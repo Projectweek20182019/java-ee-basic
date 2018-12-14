@@ -21,9 +21,7 @@ public class UserTest {
     @BeforeClass //executes once before all tests are ran
     public static void SetupChromeDriver(){
         // Setup the Chrome driver for the whole class
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        driver = ChromeDriverHelper.getDriver();
     }
 
     @AfterClass //executes once after all tests are ran

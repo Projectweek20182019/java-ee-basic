@@ -19,9 +19,7 @@ public class LoginPageTest {
     @BeforeClass
     public static void SetupChromeDriver(){
         // Setup the Chrome driver for the whole class
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        driver = ChromeDriverHelper.getDriver();
     }
 
     @AfterClass
