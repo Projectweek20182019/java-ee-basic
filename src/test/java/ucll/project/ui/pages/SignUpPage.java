@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import ucll.project.domain.user.Gender;
 import ucll.project.domain.user.Role;
+import ucll.project.domain.user.User;
 
 public class SignUpPage {
 
@@ -34,13 +35,26 @@ public class SignUpPage {
     @FindBy(id="submitButton")
     private WebElement submitButton;
 
-    public SignUpPage(WebDriver driver){
+    public SignUpPage(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     public void navigateTo(){
         driver.get("http://localhost:8080/user/signup");
+    }
+
+    public LoginPage registerUserExpectSuccess(User user, String dateOfBirth, String password){
+        enterEmail(user.getEmail());
+        enterUsername(user.getUserName());
+        enterFirstName(user.getFirstName());
+        enterLastName(user.getLastName());
+        selectGender(user.getGender());
+        selectRole(user.getRole());
+        enterDateOfBirth("01/01/2000");
+        enterPassword(password);
+        enterRepeatPassword(password);
+        return clickSubmitButton();
     }
 
     public void enterEmail(String email){
